@@ -12,6 +12,17 @@ namespace ConsoleApp1
         ArrayList beowolf;
         static void Main(string[] args)
         {
+            Program p = new Program();
+            p.beowolf = new ArrayList();
         }
+        public void Run()
+        {
+            this.ReadTextFiles();
+        }
+        public void ReadTextFiles()
+        {
+            using(StreamReader file=new StreamReader())
+        }
+        
     }
 }
