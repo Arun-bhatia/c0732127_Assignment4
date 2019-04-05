@@ -32,6 +32,7 @@ namespace ConsoleApp1
                     Console.WriteLine(ln);
                     beowolf.Add(ln);
                 }
+
                 file.Close();
                 Console.WriteLine($"File has {counter} lines.");
             }
