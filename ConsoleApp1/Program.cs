@@ -15,6 +15,8 @@ namespace ConsoleApp1
         {
             Program p = new Program();
             p.beowolf = new ArrayList();
+            p.ReadTextFiles();
+            
         }
         public void Run()
         {
@@ -22,7 +24,7 @@ namespace ConsoleApp1
         }
         public void ReadTextFiles()
         {
-            using(StreamReader file=new StreamReader("U:/Users/732127\visual studio/ConsoleApp1/beowolf.txt"))
+            using(StreamReader file=new StreamReader(@"U:\Users\732127\arun.txt"))
             {
                 int counter = 0;
                 string ln;
@@ -31,6 +33,7 @@ namespace ConsoleApp1
                 {
                     Console.WriteLine(ln);
                     beowolf.Add(ln);
+                    counter++;
                 }
 
                 file.Close();
@@ -57,5 +60,7 @@ namespace ConsoleApp1
             }
             return countSpaces;
         }
+
+       
     }
 }
