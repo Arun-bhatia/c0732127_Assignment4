@@ -16,6 +16,7 @@ namespace ConsoleApp1
             Program p = new Program();
             p.beowolf = new ArrayList();
             p.ReadTextFiles();
+            p.wordCount();
             
         }
         public void Run()
@@ -28,16 +29,20 @@ namespace ConsoleApp1
             {
                 int counter = 0;
                 string ln;
-
+                string[] words;
                 while ((ln = file.ReadLine()) != null)
                 {
                     Console.WriteLine(ln);
                     beowolf.Add(ln);
                     counter++;
+                   
                 }
-
+                words = file.ReadToEnd().Split(' ');
                 file.Close();
                 Console.WriteLine($"File has {counter} lines.");
+                Console.WriteLine(words.Length);
+               
+                Console.WriteLine();
             }
         }
         
@@ -61,6 +66,35 @@ namespace ConsoleApp1
             return countSpaces;
         }
 
-       
+       public int wordCount()
+        {
+            string inFileName = null;
+
+            Console.WriteLine("Enter the name of the file to process:");
+            
+
+            StreamReader sr = new StreamReader(@"U:\Users\732127\arun.txt");
+
+            int counter = 0;
+            string delim = " ";
+            string[] fields = null;
+            string line = null;
+
+            while (!sr.EndOfStream)
+            {
+                line = sr.ReadLine();
+            }
+
+
+
+            fields = line.Split(' ');
+            for (int i = 0; i < fields.Length; i++)
+            {
+                counter++;
+            }
+            sr.Close();
+            Console.WriteLine("The word count is {0}", counter);
+            return counter;
+        }
     }
 }
